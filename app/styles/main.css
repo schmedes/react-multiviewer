@@ -93,8 +93,10 @@ body {
   right: 1%;
   font-size: 24pt;
   z-index: 99;
-  border: none;
-  background: none;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 25px;
+  width: 45px;
   cursor: pointer;
   outline: none;
 }
