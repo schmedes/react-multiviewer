@@ -6,7 +6,11 @@
   "scripts": {
     "test": "mocha --compilers js:babel/register --recursive",
     "build": "gulp build",
-    "lint": "glup lint"
+    "lint": "gulp lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schmedes/react-multiviewer.git"
   },
   "author": "chobo",
   "license": "ISC",
