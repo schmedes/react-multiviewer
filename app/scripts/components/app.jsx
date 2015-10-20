@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     const initialStateArray = location.hash.split('/');
-    for (let it = 1; it <= initialStateArray.length - 1; it++) {
+    for (let it = 1; it <= initialStateArray.length - 1; it++){
       if (initialStateArray[it] !== '') {
         this.props.dispatch(addStream(initialStateArray[it]));
       }

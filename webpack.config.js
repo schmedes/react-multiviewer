@@ -7,6 +7,7 @@ var path = require("path");
 
 module.exports = {
 
+  devtool: 'source-map',
   entry:{
     app: ['webpack/hot/dev-server',"./app/index.js"]
 
@@ -16,6 +17,19 @@ module.exports = {
        publicPath: "/dist/",
        filename: "bundle.js"
   },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    })
+  ],
 
   module: {
      loaders:[
