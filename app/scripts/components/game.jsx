@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import Stream from './stream';
+import jsonp from 'jsonp';
 
 export default class Game extends Component {
   constructor(props) {
@@ -8,17 +9,12 @@ export default class Game extends Component {
   }
   // fetch a list of streams from twitch
   fetchStreamList() {
-    const xml = new XMLHttpRequest();
-    xml.open('GET', 'https://api.twitch.tv/kraken/streams?game=' + this.props.gamename);
-    xml.setRequestHeader('Content-Type', 'application/json');
-    xml.send(null);
-    xml.onreadystatechange = function onreadystatechange() {
-      if (xml.readyState === 4) {
-        if (xml.status === 200) {
-          this.setState( {streamlist: JSON.parse(xml.response).streams} );
-        }
+    jsonp('https://api.twitch.tv/kraken/streams?game=' + this.props.gamename, {param: 'callback', timeout: 60000, prefix: 'a_', name: 'foo'}, (err, data)=>{
+      if (!err) {
+        this.setState({streamlist: data.streams});
       }
-    }.bind(this);
+    }
+  );
   }
   // clear component state
   clearState(event) {
