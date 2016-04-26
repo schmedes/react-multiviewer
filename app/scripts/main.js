@@ -8,6 +8,4 @@ import StreamViewer from './reducers';
 const store = createStore(StreamViewer, { streamdata: [] });
 const root = document.getElementById('content');
 React.render(
-  <Provider store= {store}>{() => <App/>}</Provider>
-
-, root);
+  <Provider store= {store}>{() => <App/>}</Provider>, root);

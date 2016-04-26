@@ -4,10 +4,12 @@ import {ADD_STREAM, DELETE_STREAM} from './actions';
 function StreamViewer(state = {streamdata: [] }, action) {
   switch (action.type) {
   case ADD_STREAM:
+  // add new stream to state
     return {
       streamdata: [...state.streamdata, action.data]
     };
   case DELETE_STREAM:
+  // return state without deleted stream
     return {
       streamdata: [...state.streamdata.slice(0, action.index), ...state.streamdata.slice(action.index + 1)]
     };

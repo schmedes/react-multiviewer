@@ -7,9 +7,9 @@ import StreamBox from './streambox';
 
 
 class App extends Component {
-  // Get initialstate from hash
   constructor(props) {
     super(props);
+    // Get initialstate from hash
     const initialStateArray = location.hash.split('/');
     for (let it = 1; it <= initialStateArray.length - 1; it++) {
       if (initialStateArray[it] !== '') {
