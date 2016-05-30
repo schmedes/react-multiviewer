@@ -89,12 +89,13 @@ body {
   right: 1%;
   font-size: 24pt;
   z-index: 99;
-  background-color: white;
-  border: 1px solid white;
   border-radius: 25px;
+  background-color: none;
   width: 45px;
   cursor: pointer;
   outline: none;
+  background-color: white;
+  border: 1px solid white;
 }
 
 

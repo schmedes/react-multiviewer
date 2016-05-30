@@ -6,7 +6,6 @@ export default class StreamBox extends Component {
 
   componentDidUpdate() {
     const boxes = document.querySelectorAll('.streamcontainer');
-    console.log(boxes);
     fixWidth(this.props.streamdata, boxes);
   }
 
