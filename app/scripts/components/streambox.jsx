@@ -1,7 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import StreamView from './streamview';
+import fixWidth from '../flexboxIframeHack';
 
 export default class StreamBox extends Component {
+
+  componentDidUpdate() {
+    const boxes = document.querySelectorAll('.streamcontainer');
+    console.log(boxes);
+    fixWidth(this.props.streamdata, boxes);
+  }
 
   render() {
     return (
