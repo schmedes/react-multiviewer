@@ -1,8 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #eeeded;
+  background-color: #111;
   font-family: 'Roboto', sans-serif;
 }
 .streambox {
@@ -17,6 +21,7 @@ body {
   flex: 1 0 50%;
   position: relative;
   z-index: 5;
+  border: 1px solid black;
 }
 
 .streamcontainer:nth-child(3){
@@ -30,7 +35,7 @@ body {
   right: 120px;
   z-index: 6;
   button {
-    width: 32px;
+    width: 60px;
     height: 25px;
     cursor: pointer;
     background: none;
