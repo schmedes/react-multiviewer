@@ -4,6 +4,7 @@ var simplevars = require('postcss-simple-vars');
 var autoprefixer = require('autoprefixer-core');
 var webpack = require('webpack');
 var path = require("path");
+var env = process.env.NODE_ENV;
 
 module.exports = {
 
@@ -20,9 +21,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+      'process.env': { NODE_ENV: JSON.stringify(env) }
     }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {

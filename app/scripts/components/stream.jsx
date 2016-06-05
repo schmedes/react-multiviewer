@@ -4,7 +4,6 @@ export default class Stream extends Component {
   // add stream to current state
   addStream(text) {
     this.props.onAddClick(text);
-    location.hash += '/' + text;
   }
 
   render() {

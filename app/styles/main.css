@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #111;
+  background-color: #1e1e1e;
   font-family: 'Roboto', sans-serif;
 }
 .streambox {
@@ -21,7 +21,7 @@ body {
   flex: 1 0 50%;
   position: relative;
   z-index: 5;
-  border: 1px solid black;
+  border: 5px solid #1e1e1e;
 }
 
 .streamcontainer:nth-child(3){
@@ -70,42 +70,69 @@ body {
 
 .sidebar {
   position: absolute;
+  display: flex;
   top: 0;
   right: 0;
   height: 100vh;
-  width: 400px;
+  width: 450px;
   overflow: auto;
   z-index: 90;
-  background-color: #fff;
+  background-color: #141414;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  transition: right 0.5s;
+  transition: all 0.35s;
 
   .controllbuttons {
     display: flex;
+    margin-top: 10px;
     input {
-      width: 80%;
+      width: 70%;
+      margin-right: 18%;
+      background-color: #141414;
+      border: 1px solid #5c0e0a;
+      color: white;
+      &:focus {
+        outline-color: #B71C1C;
+      }
     }
   }
 }
+.sidebar-content {
+  width: 90%;
+}
 
 .togglebutton {
-  position: fixed;
-  top: -4px;
-  right: 1%;
-  font-size: 24pt;
-  z-index: 99;
-  border-radius: 25px;
-  background-color: none;
-  width: 45px;
+  font-size: 36pt;
+  width: 10%;
   cursor: pointer;
   outline: none;
-  background-color: white;
-  border: 1px solid white;
+  color: #B71C1C;
+  background-color: #141414;
+  border: 1px solid #141414;
+  display: inline;
+  word-wrap: break-word;
+}
+.togglebutton:before {
+  content: '';
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  opacity: 1;
+}
+.hidden > .togglebutton:before {
+  opacity: 0;
 }
 
 
 .hidden {
-  right: -410px;
+  transform: translateX(405px);
+  opacity: 0;
+}
+.hidden:hover {
+  opacity: 1;
 }
 
 .stream {
@@ -122,10 +149,13 @@ body {
   height: 100vh !important;
   width: 100vw;
   z-index: 10;
+  border: none;
 }
 .game {
   position: relative;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #5c0e0a;
+  color: white;
+  cursor: pointer;
 }
 
 .gameinfo {
@@ -141,18 +171,24 @@ body {
   font-size: 32pt;
   position: absolute;
   top: 15px;
-  right: 1%;
-  cursor: pointer;
+  right: 3%;
   outline: none;
+  cursor: pointer;
+  color: white;
 }
 
 .addbutton {
   background: none;
-  border: none;
+  background-color: #B71C1C;
+  border: 1px solid #B71C1C;
+  border-radius: 25px;
   cursor: pointer;
   font-size: 32pt;
+  height: 50px;
+  width: 50px;
   outline: none;
   margin: 0 30px 0 30px;
+  color: white;
 }
 
 .refreshbutton {

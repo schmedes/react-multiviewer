@@ -4,8 +4,3 @@
 
 - View up to 4 streams simultaneously
 - Browse popular streams or add them by name
-
-### Upcoming Features
-
-- Sharper design
-- Error Messages if AJAX fails 
