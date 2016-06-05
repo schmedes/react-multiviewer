@@ -74,7 +74,7 @@ body {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 450px;
+  width: 25vw;
   overflow: auto;
   z-index: 90;
   background-color: #141414;
@@ -101,8 +101,8 @@ body {
 }
 
 .togglebutton {
-  font-size: 36pt;
-  width: 10%;
+  font-size: 42pt;
+  width: 2.5vw;
   cursor: pointer;
   outline: none;
   color: #B71C1C;
@@ -117,10 +117,10 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100vw;
+  width: 75vw;
   height: 100vh;
-  background: rgba(0,0,0,0.4);
   opacity: 1;
+  transition: opacity 0.5s;
 }
 .hidden > .togglebutton:before {
   opacity: 0;
@@ -128,7 +128,7 @@ body {
 
 
 .hidden {
-  transform: translateX(405px);
+  transform: translateX(22.5vw);
   opacity: 0;
 }
 .hidden:hover {

@@ -36,6 +36,7 @@ export default class StreamController extends Component {
   toggleSideBar() {
     const sidebar = document.querySelector('.sidebar');
     sidebar.classList.toggle('hidden');
+    sidebar.scrollTop = 0;
   }
 
   render() {
